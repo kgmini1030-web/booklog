@@ -15,14 +15,14 @@
   --shadow: 0 1px 8px rgba(0,0,0,.06); --r: 16px;
 }
 body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 80px; }
-
+ 
 /* 헤더 */
 .header { padding: 52px 20px 0; }
 .header-row { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 16px; }
 .header-title { font-family: 'Noto Serif KR', serif; font-size: 26px; font-weight: 700; }
 .header-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
 .add-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; border: none; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-
+ 
 /* 캐릭터 카드 */
 .char-card { background: var(--card); border-radius: var(--r); margin: 0 20px 14px; padding: 18px; box-shadow: var(--shadow); cursor: pointer; }
 .char-top { display: flex; gap: 14px; align-items: center; }
@@ -40,24 +40,24 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
 .stat { flex: 1; text-align: center; }
 .stat-val { font-size: 18px; font-weight: 700; }
 .stat-label { font-size: 10px; color: var(--muted); font-weight: 600; margin-top: 1px; }
-
+ 
 /* 통계 칩 */
 .chips { display: flex; gap: 8px; overflow-x: auto; padding: 0 20px 14px; scrollbar-width: none; }
 .chips::-webkit-scrollbar { display: none; }
 .chip { flex-shrink: 0; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; background: var(--card); border: 1.5px solid var(--border); color: var(--muted); white-space: nowrap; }
 .chip b { color: var(--text); }
-
+ 
 /* 탭 */
 .tabs { display: flex; padding: 0 20px; border-bottom: 1.5px solid var(--border); margin-bottom: 2px; }
 .tab { flex: 1; padding: 10px 0; text-align: center; font-size: 12px; font-weight: 600; color: var(--muted); cursor: pointer; border-bottom: 2.5px solid transparent; margin-bottom: -1.5px; }
 .tab.on { color: var(--text); border-bottom-color: var(--primary); }
-
+ 
 /* 리스트 */
 .list { padding: 12px 20px 0; display: flex; flex-direction: column; gap: 10px; }
 .empty { text-align: center; padding: 48px 20px; color: var(--muted); }
 .empty-icon { font-size: 38px; margin-bottom: 10px; }
 .empty p { font-size: 14px; line-height: 1.7; }
-
+ 
 /* 책 카드 */
 .book-card { background: var(--card); border-radius: var(--r); padding: 14px; box-shadow: var(--shadow); display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
 .book-thumb { width: 52px; height: 72px; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 22px; overflow: hidden; }
@@ -79,7 +79,7 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
 .book-memo { font-size: 12px; color: var(--muted); margin-top: 5px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .book-actions { display: flex; flex-direction: column; gap: 4px; }
 .act-btn { width: 28px; height: 28px; border: none; background: transparent; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; border-radius: 6px; }
-
+ 
 /* 베스트셀러 탭 */
 .bs-wrap { padding: 16px 20px; }
 .bs-card { background: var(--card); border-radius: var(--r); padding: 20px; box-shadow: var(--shadow); }
@@ -95,14 +95,14 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
 .bs-link-sub { font-size: 12px; color: var(--muted); }
 .bs-link-arrow { font-size: 16px; color: var(--light); }
 .bs-tip { font-size: 12px; color: var(--light); text-align: center; margin-top: 14px; line-height: 1.6; }
-
+ 
 /* 바텀 네비 */
 .bnav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; background: rgba(255,255,255,.96); backdrop-filter: blur(10px); border-top: 1px solid var(--border); display: flex; padding: 6px 0 calc(6px + env(safe-area-inset-bottom)); z-index: 50; }
 .bnav-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 6px 0; }
 .bnav-icon { font-size: 22px; }
 .bnav-label { font-size: 10px; font-weight: 600; color: var(--muted); }
 .bnav-item.on .bnav-label { color: var(--primary); }
-
+ 
 /* 레벨업 팝업 */
 .lu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 200; align-items: center; justify-content: center; }
 .lu-overlay.on { display: flex; }
@@ -112,7 +112,7 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
 .lu-name { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; margin-bottom: 6px; }
 .lu-desc { font-size: 13px; color: var(--muted); margin-bottom: 22px; line-height: 1.6; }
 .lu-btn { width: 100%; padding: 13px; border: none; border-radius: 12px; background: var(--primary); color: #fff; font-family: 'Noto Sans KR', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; }
-
+ 
 /* 상세 시트 */
 .detail-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 100; align-items: flex-end; justify-content: center; }
 .detail-overlay.on { display: flex; }
@@ -135,7 +135,7 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
 .detail-btn { flex: 1; padding: 12px; border: none; border-radius: 12px; font-family: 'Noto Sans KR', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; }
 .dbtn-edit { background: var(--primary); color: #fff; }
 .dbtn-del  { background: #fff0f0; color: #e24b4a; border: 1.5px solid #fca5a5; }
-
+ 
 /* 추가/수정 모달 */
 .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 150; align-items: flex-end; justify-content: center; }
 .modal-overlay.on { display: flex; }
@@ -148,7 +148,7 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
 .finput:focus { border-color: var(--primary); background: #fff; }
 .finput::placeholder { color: var(--light); }
 textarea.finput { min-height: 76px; resize: none; }
-
+ 
 /* 검색 */
 .search-row { display: flex; gap: 8px; }
 .search-row .finput { flex: 1; }
@@ -165,20 +165,20 @@ textarea.finput { min-height: 76px; resize: none; }
 .sauthor { font-size: 11px; color: var(--muted); margin-top: 2px; }
 .spub { font-size: 11px; color: var(--light); margin-top: 1px; }
 .search-msg { padding: 14px; text-align: center; font-size: 13px; color: var(--muted); }
-
+ 
 /* 선택된 표지 */
 .cover-preview { display: none; align-items: center; gap: 12px; margin-top: 8px; }
 .cover-preview.on { display: flex; }
 .cover-img { width: 44px; height: 62px; object-fit: cover; border-radius: 6px; border: 1px solid var(--border); }
 .cover-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
-
+ 
 /* 상태 버튼 */
 .status-row { display: flex; gap: 8px; }
 .sbtn { flex: 1; padding: 10px 6px; border: 1.5px solid var(--border); border-radius: 10px; background: #fff; color: var(--muted); font-family: 'Noto Sans KR', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; text-align: center; }
 .sbtn.sd { background: #f5f5f5; border-color: var(--primary); color: var(--primary); }
 .sbtn.sr { background: var(--blue-bg); border-color: var(--blue); color: var(--blue); }
 .sbtn.sw { background: var(--green-bg); border-color: var(--green); color: var(--green); }
-
+ 
 /* 별점 입력 */
 .star-input-row { display: flex; gap: 2px; }
 .sinput-btn { width: 36px; height: 36px; border: none; background: none; cursor: pointer; font-size: 24px; color: var(--light); padding: 0; display: flex; align-items: center; justify-content: center; position: relative; }
@@ -186,19 +186,19 @@ textarea.finput { min-height: 76px; resize: none; }
 .sinput-btn.shalf::before { content: '★'; position: absolute; color: transparent; background: linear-gradient(90deg,#f5a623 50%,var(--light) 50%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-size: 24px; }
 .sinput-btn.shalf { color: transparent; }
 .star-val-label { font-size: 12px; color: var(--muted); margin-left: 4px; align-self: center; }
-
+ 
 /* 모달 하단 */
 .modal-footer { display: flex; gap: 10px; margin-top: 18px; }
 .mbtn { flex: 1; padding: 13px; border: none; border-radius: 12px; font-family: 'Noto Sans KR', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; }
 .mbtn-cancel { background: var(--border); color: var(--muted); }
 .mbtn-save { background: var(--primary); color: #fff; }
-
+ 
 @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
 @keyframes popIn   { from { opacity:0; transform:scale(.85); } to { opacity:1; transform:scale(1); } }
 </style>
 </head>
 <body>
-
+ 
 <div class="header">
   <div class="header-row">
     <div>
@@ -208,7 +208,7 @@ textarea.finput { min-height: 76px; resize: none; }
     <button class="add-btn" id="add-btn">+</button>
   </div>
 </div>
-
+ 
 <div class="char-card" id="char-card">
   <div class="char-top">
     <div class="char-canvas-wrap"><canvas id="char-canvas" width="72" height="72"></canvas></div>
@@ -229,9 +229,9 @@ textarea.finput { min-height: 76px; resize: none; }
     <div class="stat"><div class="stat-val" id="s-month">0</div><div class="stat-label">이달 완독</div></div>
   </div>
 </div>
-
+ 
 <div class="chips" id="chips"></div>
-
+ 
 <div class="tabs">
   <div class="tab on" data-tab="all">전체</div>
   <div class="tab" data-tab="done">읽었어요</div>
@@ -239,9 +239,9 @@ textarea.finput { min-height: 76px; resize: none; }
   <div class="tab" data-tab="want">위시리스트</div>
   <div class="tab" data-tab="best">베스트셀러</div>
 </div>
-
+ 
 <div id="page-books"><div class="list" id="book-list"></div></div>
-
+ 
 <div id="page-best" style="display:none;">
   <div class="bs-wrap">
     <div class="bs-card">
@@ -273,14 +273,14 @@ textarea.finput { min-height: 76px; resize: none; }
     </div>
   </div>
 </div>
-
+ 
 <nav class="bnav">
   <div class="bnav-item on" data-tab="all"><div class="bnav-icon">📚</div><div class="bnav-label">전체</div></div>
   <div class="bnav-item" data-tab="reading"><div class="bnav-icon">📖</div><div class="bnav-label">읽는 중</div></div>
   <div class="bnav-item" data-tab="want"><div class="bnav-icon">🔖</div><div class="bnav-label">위시리스트</div></div>
   <div class="bnav-item" data-tab="best"><div class="bnav-icon">📊</div><div class="bnav-label">베스트셀러</div></div>
 </nav>
-
+ 
 <!-- 레벨업 팝업 -->
 <div class="lu-overlay" id="lu-overlay">
   <div class="lu-box">
@@ -291,7 +291,7 @@ textarea.finput { min-height: 76px; resize: none; }
     <button class="lu-btn" id="lu-close">확인</button>
   </div>
 </div>
-
+ 
 <!-- 상세 시트 -->
 <div class="detail-overlay" id="detail-overlay">
   <div class="detail-sheet">
@@ -315,7 +315,7 @@ textarea.finput { min-height: 76px; resize: none; }
     </div>
   </div>
 </div>
-
+ 
 <!-- 추가/수정 모달 -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
@@ -372,7 +372,7 @@ textarea.finput { min-height: 76px; resize: none; }
     </div>
   </div>
 </div>
-
+ 
 <script>
 'use strict';
 /* ═══ 레벨 ═══ */
@@ -407,17 +407,30 @@ function drawChar(canvas,done){
   ctx.textAlign='center';ctx.textBaseline='middle';
   ctx.fillText('LV.'+cur.lv,18,13);
 }
-
+ 
 /* ═══ 데이터 ═══ */
 const KEY='booklog_v5';
 let books=[];
-try{books=JSON.parse(localStorage.getItem(KEY))||[];}catch{}
+try{
+  // 이전 버전 데이터 마이그레이션
+  const LEGACY_KEYS=['booklog_final','booklog_v4','booklog_v3','booklog_v2','booklog_v1'];
+  const saved=localStorage.getItem(KEY);
+  if(saved){
+    books=JSON.parse(saved)||[];
+  } else {
+    // 이전 버전 키에서 데이터 찾기
+    for(const k of LEGACY_KEYS){
+      const old=localStorage.getItem(k);
+      if(old){books=JSON.parse(old)||[];localStorage.setItem(KEY,old);break;}
+    }
+  }
+}catch{}
 function saveData(){localStorage.setItem(KEY,JSON.stringify(books));}
-
+ 
 /* ═══ 상태 ═══ */
 let curTab='all',editId=null,selStatus='done',selStar=0,selCover='',selPublisher='';
 let prevDone=books.filter(b=>b.status==='done').length;
-
+ 
 /* ═══ 유틸 ═══ */
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function starsHTML(rating){
@@ -427,7 +440,7 @@ function starsHTML(rating){
     return '<span class="star">★</span>';
   }).join('')+(rating?'<span style="font-size:11px;color:var(--muted);margin-left:3px;">'+rating+'</span>':'')+'</div>';
 }
-
+ 
 /* ═══ 캐릭터 ═══ */
 function updateChar(animate){
   const done=books.filter(b=>b.status==='done').length;
@@ -469,7 +482,7 @@ function showLevelup(l){
   document.getElementById('lu-desc').textContent=l.title;
   document.getElementById('lu-overlay').classList.add('on');
 }
-
+ 
 /* ═══ 탭 ═══ */
 function switchTab(tab){
   curTab=tab;
@@ -479,7 +492,7 @@ function switchTab(tab){
   document.getElementById('page-best').style.display=tab==='best'?'block':'none';
   if(tab!=='best')renderBooks();
 }
-
+ 
 /* ═══ 렌더링 ═══ */
 function renderBooks(){
   const filter=curTab==='all'?null:curTab;
@@ -515,7 +528,7 @@ function renderBooks(){
     '</div>';
   }).join('');
 }
-
+ 
 /* ═══ 상세보기 ═══ */
 function openDetail(id){
   const b=books.find(x=>x.id===id);
@@ -538,7 +551,7 @@ function openDetail(id){
   document.getElementById('detail-overlay').classList.add('on');
 }
 function closeDetail(){document.getElementById('detail-overlay').classList.remove('on');}
-
+ 
 /* ═══ 모달 ═══ */
 function openModal(id=null){
   editId=id;
@@ -600,7 +613,7 @@ function deleteBook(id){
   books=books.filter(b=>b.id!==id);
   saveData();renderBooks();updateChar(false);
 }
-
+ 
 /* ═══ 검색 ═══ */
 async function searchBooks(){
   const query=document.getElementById('f-search').value.trim();
@@ -639,7 +652,7 @@ async function searchBooks(){
   }catch(e){drop.innerHTML='<div class="search-msg">검색에 실패했어요. 제목을 직접 입력해주세요.</div>';}
   btn.textContent='검색';btn.disabled=false;
 }
-
+ 
 /* ═══ 이벤트 등록 ═══ */
 document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('add-btn').addEventListener('click',()=>openModal());
@@ -659,7 +672,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('modal-overlay').addEventListener('click',e=>{if(e.target===document.getElementById('modal-overlay'))closeModal();});
   document.getElementById('lu-close').addEventListener('click',()=>document.getElementById('lu-overlay').classList.remove('on'));
   document.getElementById('detail-overlay').addEventListener('click',e=>{if(e.target===document.getElementById('detail-overlay'))closeDetail();});
-
+ 
   // 별점 — 왼쪽 절반=0.5, 오른쪽=1.0
   document.querySelectorAll('.sinput-btn').forEach(btn=>{
     btn.addEventListener('click',e=>{
@@ -681,7 +694,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
     btn.addEventListener('mouseleave',()=>setStar(selStar));
   });
-
+ 
   // 책 카드 이벤트 위임
   document.getElementById('book-list').addEventListener('click',e=>{
     const editBtn=e.target.closest('[data-edit]');
@@ -691,14 +704,14 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(delBtn){e.stopPropagation();deleteBook(parseInt(delBtn.dataset.del));return;}
     if(card)openDetail(parseInt(card.dataset.id));
   });
-
+ 
   // 검색 드롭다운 외부 클릭
   document.addEventListener('click',e=>{
     if(!e.target.closest('#f-search')&&!e.target.closest('#search-go-btn')&&!e.target.closest('#search-drop')){
       document.getElementById('search-drop').classList.remove('on');
     }
   });
-
+ 
   updateChar(false);
   renderBooks();
 });
