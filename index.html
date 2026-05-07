@@ -410,22 +410,63 @@ function drawChar(canvas,done){
  
 /* ═══ 데이터 ═══ */
 const KEY='booklog_v5';
-let books=[];
-try{
-  // 이전 버전 데이터 마이그레이션
-  const LEGACY_KEYS=['booklog_final','booklog_v4','booklog_v3','booklog_v2','booklog_v1'];
-  const saved=localStorage.getItem(KEY);
-  if(saved){
-    books=JSON.parse(saved)||[];
-  } else {
-    // 이전 버전 키에서 데이터 찾기
+const LEGACY_KEYS=['booklog_final','booklog_v4','booklog_v3','booklog_v2','booklog_v1'];
+ 
+// userId — 기기마다 고유 ID (서버에서 내 데이터 구분)
+let userId = localStorage.getItem('booklog_uid');
+if(!userId){
+  userId = 'user_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+  localStorage.setItem('booklog_uid', userId);
+}
+ 
+let books = [];
+let isSyncing = false;
+ 
+// 로컬에서 먼저 읽기 (빠른 초기 렌더)
+try {
+  const saved = localStorage.getItem(KEY);
+  if(saved){ books = JSON.parse(saved)||[]; }
+  else {
     for(const k of LEGACY_KEYS){
-      const old=localStorage.getItem(k);
-      if(old){books=JSON.parse(old)||[];localStorage.setItem(KEY,old);break;}
+      const old = localStorage.getItem(k);
+      if(old){ books = JSON.parse(old)||[]; break; }
     }
   }
-}catch{}
-function saveData(){localStorage.setItem(KEY,JSON.stringify(books));}
+} catch{}
+ 
+// 서버에서 불러오기
+async function loadFromServer(){
+  try{
+    const res = await fetch('/api/load?userId='+encodeURIComponent(userId));
+    if(!res.ok) return;
+    const data = await res.json();
+    if(data.books && data.books.length >= books.length){
+      books = data.books;
+      localStorage.setItem(KEY, JSON.stringify(books));
+      renderBooks();
+      updateChar(false);
+    }
+  }catch(e){ console.log('서버 불러오기 실패, 로컬 데이터 사용'); }
+}
+ 
+// 서버에 저장
+async function saveToServer(){
+  if(isSyncing) return;
+  isSyncing = true;
+  try{
+    await fetch('/api/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, books })
+    });
+  }catch(e){ console.log('서버 저장 실패, 로컬에만 저장됨'); }
+  isSyncing = false;
+}
+ 
+function saveData(){
+  localStorage.setItem(KEY, JSON.stringify(books));
+  saveToServer(); // 서버에도 동시에 저장
+}
  
 /* ═══ 상태 ═══ */
 let curTab='all',editId=null,selStatus='done',selStar=0,selCover='',selPublisher='';
@@ -714,6 +755,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  
   updateChar(false);
   renderBooks();
+  loadFromServer(); // 서버에서 최신 데이터 동기화
 });
 </script>
 </body>
